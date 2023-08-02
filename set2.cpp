@@ -3,10 +3,12 @@ using namespace std;
 
 void moveDown(char arr[], int coOrdinates[], char &direction) {
     direction = 'D';
+    cout << "direction : " << direction << endl;
 }
 
 void moveUp(char arr[], int coOrdinates[], char &direction) {
     direction = 'U';
+    cout << "direction : " << direction << endl;
 }
 
 void moveRight(char arr[], int coOrdinates[], char &direction) {
@@ -30,6 +32,7 @@ void moveRight(char arr[], int coOrdinates[], char &direction) {
         direction = 'E';
         break;
     }
+    cout << "direction right : " << direction << endl;
 }
 
 void moveLeft(char arr[], int coOrdinates[], char &direction) {
@@ -53,6 +56,7 @@ void moveLeft(char arr[], int coOrdinates[], char &direction) {
         direction = 'W';
         break;
     }
+    cout << "direction : " << direction << endl;
 }
 
 void moveBackward(char arr[], int coOrdinates[], char direction) {
@@ -61,10 +65,10 @@ void moveBackward(char arr[], int coOrdinates[], char direction) {
         coOrdinates[1]--;
         break;
     case 'S':
-        coOrdinates[1]++;
+        coOrdinates[1]--;
         break;
     case 'E':
-        coOrdinates[0]++;
+        coOrdinates[0]--;
         break;
     case 'W':
         coOrdinates[0]--;
@@ -73,9 +77,10 @@ void moveBackward(char arr[], int coOrdinates[], char direction) {
         coOrdinates[2]--;
         break;
     case 'D':
-        coOrdinates[2]++;
+        coOrdinates[2]--;
         break;
     }
+    cout << "direction : " << direction << endl;
 }
 
 void moveForward(char arr[], int coOrdinates[], char direction) {
@@ -84,10 +89,10 @@ void moveForward(char arr[], int coOrdinates[], char direction) {
         coOrdinates[1]++;
         break;
     case 'S':
-        coOrdinates[1]--;
+        coOrdinates[1]++;
         break;
     case 'E':
-        coOrdinates[0]--;
+        coOrdinates[0]++;
         break;
     case 'W':
         coOrdinates[0]++;
@@ -96,13 +101,15 @@ void moveForward(char arr[], int coOrdinates[], char direction) {
         coOrdinates[2]++;
         break;
     case 'D':
-        coOrdinates[2]--;
+        coOrdinates[2]++;
         break;
     }
+    cout << "direction : " << direction << endl;
 }
 
 void calculateCoordinate(char arr[], int coOrdinates[], char &direction) {
-    for (int i = 0; i < 5; i++) {
+    int n = sizeof(arr)/sizeof(arr[0]);
+    for (int i = 0; i < n; i++) {
         char ch = arr[i];
         switch (ch) {
         case 'f':
@@ -128,9 +135,9 @@ void calculateCoordinate(char arr[], int coOrdinates[], char &direction) {
 }
 
 int main() {
-    int coOrdinates[] = { 0, 0, 0 };
-    char direction = 'N';
-    char arr[] = { 'f', 'r', 'u', 'b', 'l' };
+    int coOrdinates[] = { 0, 0,0 };
+    char direction = 'S';
+    char arr[] = { 'f', 'l', 'b', 'u', 'f', 'r' };
     calculateCoordinate(arr, coOrdinates, direction);
 
     //print answer
