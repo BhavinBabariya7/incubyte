@@ -136,8 +136,8 @@ void calculateCoordinate(char arr[], int coOrdinates[], char &direction) {
 
 int main() {
     int coOrdinates[] = { 0, 0,0 };
-    char direction = 'S';
-    char arr[] = { 'f', 'l', 'b', 'u', 'f', 'r' };
+    char direction = 'W';
+    char arr[] = { 'f','r', 'l', 'b', 'u', 'f', 'r' };
     calculateCoordinate(arr, coOrdinates, direction);
 
     //print answer
